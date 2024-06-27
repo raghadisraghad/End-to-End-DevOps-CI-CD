@@ -8,14 +8,13 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "project-register"
-    key    = "ansible/terraform.tfstate"
-    region = "us-east-2"
-
+    bucket         = "projectbucketest"
+    key            = "ansible/terraform.tfstate"
+    dynamodb_table = "terraform-lock"
+    region         = "eu-north-1"
   }
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = "eu-north-1"
 }
-
